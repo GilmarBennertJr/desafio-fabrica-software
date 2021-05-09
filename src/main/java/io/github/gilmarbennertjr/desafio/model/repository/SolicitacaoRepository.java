@@ -13,7 +13,7 @@ import java.util.List;
 public interface SolicitacaoRepository extends JpaRepository<Solicitacao, Integer> {
     @Query(value = "select * from solicitacao s where s.status like %:status% " +
             "and solicitante like %:solicitante% and descricao_produto like %:descricaoProduto%", nativeQuery = true)
-    <S extends Solicitacao> List<S> findSolicitacoesByFilter(
+    <S extends Solicitacao> Page<S> findSolicitacoesByFilter(
             @Param("status") String status,
             @Param("solicitante") String solicitante,
             @Param("descricaoProduto") String descricaoProduto,

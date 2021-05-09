@@ -32,7 +32,7 @@ public class SolicitacaoController {
     }
 
     @GetMapping
-    public List<Solicitacao> getAllSolicitacoes(
+    public Page<Solicitacao> getAllSolicitacoes(
             @RequestParam Integer page,
             @RequestParam Integer size,
             @RequestParam(defaultValue = "", required = false) String status,

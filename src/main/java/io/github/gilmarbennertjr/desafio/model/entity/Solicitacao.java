@@ -23,7 +23,7 @@ public class Solicitacao {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name="descricao_produto", nullable = false, length = 150)
+    @Column(name="descricao_produto", nullable = false, length = 50)
     @NotEmpty(message = "{campo.descricaoproduto.obrigatorio}")
     private String descricaoProduto;
 
@@ -31,7 +31,7 @@ public class Solicitacao {
     @DecimalMin(value="0.0", message = "{campo.valorproduto.invalido}")
     private BigDecimal valorProduto;
 
-    @Column(nullable = false, length = 150)
+    @Column(nullable = false, length = 50)
     @NotEmpty(message = "{campo.solicitante.obrigatorio}")
     private String solicitante;
 
